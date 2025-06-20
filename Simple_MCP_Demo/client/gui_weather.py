@@ -10,6 +10,7 @@ import asyncio
 import threading
 from datetime import datetime
 from mcp_client import MCPClient
+import os
 
 
 class WeatherGUI:
@@ -22,7 +23,8 @@ class WeatherGUI:
         self.root.configure(bg='#f0f0f0')
         
         # MCP Client
-        self.client = MCPClient()
+        server_host = os.environ.get("MCP_SERVER_HOST", "localhost")
+        self.client = MCPClient(server_host=server_host)
         self.connected = False
         
         # Create GUI elements

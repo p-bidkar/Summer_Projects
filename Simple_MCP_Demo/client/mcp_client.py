@@ -8,6 +8,7 @@ import asyncio
 import logging
 from typing import Dict, Any, List, Optional
 from datetime import datetime
+import os
 
 from colorama import init, Fore, Style
 
@@ -22,8 +23,9 @@ logger = logging.getLogger(__name__)
 class MCPClient:
     """Simple MCP Client implementation."""
     
-    def __init__(self, server_host: str = "localhost", server_port: int = 8080):
-        self.server_host = server_host
+    def __init__(self, server_host: str = None, server_port: int = 8080):
+        # Allow overriding server_host with an environment variable for Docker
+        self.server_host = server_host or os.environ.get("MCP_SERVER_HOST", "localhost")
         self.server_port = server_port
         self.request_id = 0
         self.connected = False
