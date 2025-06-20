@@ -3,4 +3,5 @@ json-rpc
 websockets==11.0.3
 pydantic<2.0
 typing-extensions==4.8.0
-colorama==0.4.6 
+colorama==0.4.6
+# tkinter is included with Python standard library 
