@@ -6,6 +6,8 @@ This project demonstrates the Model Context Protocol (MCP) with a simple server,
 
 ```
 Simple_MCP_Demo/
+├── assets/                 # Contains application assets
+│   └── gui_screenshot.png # Screenshot of the GUI
 ├── server/                 # MCP Server implementation
 │   ├── mcp_server.py      # Main server with tools
 │   ├── tools.py           # Tool implementations
@@ -64,6 +66,9 @@ python run_gui.py
 ## GUI Weather Application
 
 The GUI application provides a user-friendly interface for weather queries:
+
+### Screenshot
+![MCP Weather App Screenshot](assets/gui_screenshot.png)
 
 ### Features:
 - **City Input**: Enter any city name to get weather information
